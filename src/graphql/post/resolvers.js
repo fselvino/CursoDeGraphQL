@@ -5,17 +5,9 @@ const post = () => {
   };
 };
 
-const posts = () => {
-  return [
-    {
-      id: '1',
-      title: 'Post title 01',
-    },
-    {
-      id: '2',
-      title: 'Post title 02',
-    },
-  ];
+const posts = async (_, __, { fetch }) => {
+  const posts = await fetch('http://localhost:3000/posts');
+  return posts.json();
 };
 
 export const postResolvers = {

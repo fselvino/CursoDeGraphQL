@@ -1,21 +1,14 @@
-const user = () => {
+const user = async () => {
   return {
     id: '1',
     userName: 'Fernando',
   };
 };
 
-const users = () => {
-  return [
-    {
-      id: '1',
-      userName: 'Fernando',
-    },
-    {
-      id: '2',
-      userName: 'Selvino',
-    },
-  ];
+//o fetch esta vindo do contexto de index.js
+const users = async (_, __, { fetch }) => {
+  const users = await fetch('http://localhost:3000/users');
+  return users.json();
 };
 
 export const userResolvers = {
