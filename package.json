@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "dev":"nodemon -r sucrase/register src/index.js"
+    "dev": "nodemon -r sucrase/register src/index.js"
   },
   "repository": "git@github.com:fselvino/CursoDeGraphQL.git",
   "author": "<fernandoselvino@gmail.com>",
