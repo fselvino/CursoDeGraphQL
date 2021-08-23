@@ -1,11 +1,11 @@
-const user = async () => {
-  return {
-    id: '1',
-    userName: 'Fernando',
-  };
+const user = async (_, { id }, { fetch }) => {
+  const response = await fetch('http://localhost:3000/users/' + id);
+  const user = await response.json();
+  console.log(user);
+  return user;
 };
 
-//o fetch esta vindo do contexto de index.js
+//O fetch esta vindo do contexto de index.js
 const users = async (_, __, { fetch }) => {
   const users = await fetch('http://localhost:3000/users');
   return users.json();
